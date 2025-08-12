@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+    <id>com.example.findindir</id>
+    <name>Find in Selected Directory</name>
+    <version>1.0.0</version>
+    <vendor email="XXX@126.com">jesseHessej</vendor>
+
+    <description>
+        <![CDATA[
+         <h2>功能描述</h2>
+             <p>在项目视图中打开“在文件中查找”对话框，默认切换到选定的目录。</p><br/>
+         <h2>说明</h2>
+             <ul>
+                 <li>快捷键：Ctrl+Shift+Alt+F "在此目录中查找" / Ctrl+Shift+Alt+R "在此目录中替换"</li>
+                 <li>菜单调用：在项目视图中右键点击目录，然后点击“在此目录中查找”/“在此目录中替换”</li>
+                 <li>适用版本：IntelliJ IDEA 2025.2</li>
+             </ul>
+    ]]>
+    </description>
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <!-- 快捷键调用 -->
+        <action id="FindInSelectedDirectory"
+                class="com.jesseHessej.plugin.FindInSelectedDirectoryAction"
+                text="在此目录中查找"
+                description="使用选定路径打开“在文件中查找”对话框">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift alt F"/>
+        </action>
+
+        <!-- 右键菜单调用 -->
+        <action id="FindInSelectedDirectoryContext"
+                class="com.jesseHessej.plugin.FindInSelectedDirectoryAction"
+                text="在此目录中查找"
+                description="使用选定路径打开“在文件中查找”对话框">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="FindUsages"/>
+        </action>
+
+        <!-- 替换功能 -->
+        <action id="ReplaceInSelectedDirectory"
+                class="com.jesseHessej.plugin.ReplaceInSelectedDirectoryAction"
+                text="在此目录中替换"
+                description="使用选定路径打开“在文件中替换”对话框">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift alt R"/>
+        </action>
+
+        <!-- 右键菜单调用替换功能 -->
+        <action id="ReplaceInSelectedDirectoryContext"
+                class="com.jesseHessej.plugin.ReplaceInSelectedDirectoryAction"
+                text="在此目录中替换"
+                description="使用选定路径打开“在文件中替换”对话框">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after"
+                          relative-to-action="FindInSelectedDirectoryContext"/>
+        </action>
+    </actions>
+</idea-plugin>
