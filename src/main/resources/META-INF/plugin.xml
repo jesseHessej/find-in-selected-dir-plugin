@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <idea-plugin>
-    <id>com.example.findindir</id>
+    <id>com.jesseHessej.findindir</id>
     <name>Find in Selected Directory</name>
     <version>1.0.0</version>
     <vendor email="XXX@126.com">jesseHessej</vendor>
 
     <description>
+        Open the "Find in Files" dialog box in the project view and switch to the selected directory by default.
         <![CDATA[
+         <br/>
          <h2>功能描述</h2>
              <p>在项目视图中打开“在文件中查找”对话框，默认切换到选定的目录。</p><br/>
          <h2>说明</h2>
